@@ -1,0 +1,79 @@
+@loggedIn
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="SrHaax_">
+    <meta name="Description" content="Best minecraft free alts!">
+    <meta name="keywords" content="minecraft, alts, accounts, minecraft.net, optifine, minecraft accounts">
+    <meta name="robots" content="index">
+
+    <title>freePLUS - Best minecraft free alts!</title>
+
+    <script src="https://kit.fontawesome.com/15e0b2f1e3.js"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <h2 style="font-weight: 300;">free<span class="rgba" style="font-weight: bold;">PLUS</span></h2>
+    </header>
+
+    <main class="main pt-5 text-center">
+        <div class="card mx-auto" style="width: 20rem; background-color: #070830; box-shadow: 5px 5px 5px black;">
+            <h4 class="text-white card-title pt-2"> ADDED ALTS </h4>
+            <div class="card-body">
+                <h1 style="color: #c50214">50</h1>
+            </div>
+        </div>
+
+        <div class="upload-alt pt-5">
+            <div class="card mx-auto" style="width: 30%; background-color: #070830;">
+                <h4 class="card-title text-white p-2">UPLOAD ALT</h4>
+                <div class="card-body">
+                    @if(flashMessage('addedSuccess'))
+                      <div class="alert alert-success" role="alert">
+                        {{ addedSuccess }}
+                      </div>
+                    @endif
+                    @if(flashMessage('addedError'))
+                    <div class="alert alert-danger" role="alert">
+                      {{ addedError }}
+                    </div>
+                    @endif
+                    <form action={{ route('AccountController.create') }} method="POST">
+                        {{ csrfField() }}
+                        <div class="form-group text-left">
+                            <input type="email" name="email" class="form-control" placeholder="Email" style="padding: 30px;">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Password" style="padding: 30px;">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn_1">SEND</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+@else
+  <script> window.location.href = "/" </script>
+@endloggedIn
