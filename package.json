@@ -29,7 +29,8 @@
     "mojang": "^2.2.2",
     "nodemailer": "^6.2.1",
     "pg": "^7.11.0",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "url-parse": "^1.4.7"
   },
   "devDependencies": {},
   "autoload": {
